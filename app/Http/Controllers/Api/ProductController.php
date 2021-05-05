@@ -116,7 +116,8 @@ class ProductController extends Controller
                 return response()->json($data);
             }
         } else {
-            if (!$data = $this->product::where('name', 'LIKE', "%{$id}%")->get()) {
+            $data = $this->product::where('name', 'LIKE', "%{$id}%")->get();
+            if ($data->isEmpty()) {
                 if (!$data = $this->tags::where('name', 'LIKE', "%{$id}%")->get()) {
                     return response()->json(['error'=> 'Nada Encontrado', 404]);   
                 }else {
