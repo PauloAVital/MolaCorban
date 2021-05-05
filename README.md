@@ -29,7 +29,7 @@ Comando no terminal:
 
 6.1. **docker inspect _id do mysql_**
 
-![Título da imagem](docker_inspect.png)
+![Título da imagem](public/img/docker_inspect.png)
 
 6.3. Copie o numero do IPAddress 
 * Ex:  _172.29.0.3_
