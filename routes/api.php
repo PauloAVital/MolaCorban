@@ -24,4 +24,5 @@ Route::post('login-refresh', 'Auth\AuthenticateControllerLogin@refreshToken');
 Route::get('me', 'Auth\AuthenticateControllerLogin@getAuthenticatedUser');
 
 Route::apiResource('User', 'Api\UserController');
+Route::apiResource('Products', 'Api\ProductController');
 
