@@ -1,10 +1,10 @@
 <?php
-//2020_09_28_193126_create_table_categoria.php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableCategoria extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTableCategoria extends Migration
      */
     public function up()
     {
-        Schema::create('categoria', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('categoria', 50);
-            $table->string('descricao', 255);
-            $table->string('icon', 80);
+            $table->integer('id_products')->unsigned();
+            $table->foreign('id_products')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('name', 150);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateTableCategoria extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categoria');
+        Schema::dropIfExists('tags');
     }
 }

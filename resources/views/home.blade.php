@@ -16,20 +16,22 @@
 </style>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-3">
+        <div class="col-md-12">
             <div class="card col-md-12">
                 <div class="card-header">
 
                     <div class="card card-titles">
                         <img class="card-img-top" src="img/api.jpg" alt="dashboard">
-                        <div class="card-body">
-                            <h5 class="card-title">Api</h5>
-                            <p class="card-text">Repositorio do pauloavital.</p>
-                            <a href="/github" target="_blank" class="btn btn-primary">acessar</a>
-                        </div>
                     </div>
+                    <b>End-point para inserção de dados</b>
+                    <p class="card-text">VERBO POST [ http://localhost:8000/api/Products ].</p>
+                    <hr>
+                    <b>End-point para consulta destes produtos</b>
+                    <p class="card-text">VERBO GET [ http://localhost:8000/api/Products/8363 ].</p>
                 </div>
+                
             </div>
+            
         </div>
     </div>
 </div>

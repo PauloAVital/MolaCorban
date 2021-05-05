@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableBuscarCategoria extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateTableBuscarCategoria extends Migration
      */
     public function up()
     {
-        Schema::create('buscar_categoria', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('id_categoria')->unsigned();
-            $table->foreign('id_categoria')->references('id')->on('categoria')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('pchaves', 250);
+            $table->string('name', 150);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateTableBuscarCategoria extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('buscar_categoria');
+        Schema::dropIfExists('products');
     }
 }
